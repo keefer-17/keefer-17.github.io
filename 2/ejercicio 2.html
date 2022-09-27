@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="proyecto 2.css">
+</head>
+<body>
+    <div class="contenedor"> 
+        <form action="">
+            <p>Altura es</p>
+        <input type="text" id="base">
+    
+        <p>Base es</p>
+        <input type="text" id="altura">
+        <p>Area es  </p>
+        <input type="text" id="area" readonly>
+        <input type="button" onclick="suma()" class="btn" value="resultado">
+        </div>
+    </form>
+    </div>
+    <script>
+        function suma(){
+    
+    var base = parseFloat(document.getElementById('base').value);
+    var altura = parseFloat(document.getElementById('altura').value);
+    var area = (base * altura) / 2;
+
+    document.getElementById('area').value = area;
+}
+    </script>
+</body>
+</html>

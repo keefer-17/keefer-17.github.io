@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promedio-status</title>
+    <link rel="stylesheet" href="proyecto 10.css">
+</head>
+<body>
+    <div class="contenedor">
+        <form action="">
+        <p>I parcial</p>
+        <input type="Text" id="IP">
+        <p>II parcial</p>
+        <input type="Text" id="IIP">
+        <p>III parcial</p>
+        <input type="Text" id="IIIP">
+        <p>IV parcial</p>
+        <input type="Text" id="IVP">
+        <p>Promedio</p>
+        <input type="Text" id="resultado" readonly>
+        <p>Status</p>
+        <input type="Text" id="status" readonly>
+        <input type="button" onclick="promedio()" class="btn" value="Calcular promedio">
+    </div>
+    </form>
+    
+   <script>
+    function promedio(){
+    var IP = parseFloat(document.getElementById ('IP').value);
+    var IIP = parseFloat(document.getElementById ('IIP').value);
+    var IIIP = parseFloat(document.getElementById ('IIIP').value);
+    var IVP = parseFloat(document.getElementById ('IVP').value);
+    var prom = (IP + IIP + IIIP + IVP) / 4;
+
+document.getElementById('resultado').value = prom;
+
+    if (prom >= 75)
+    document.getElementById('status').value = "Aprobado"
+    else 
+    document.getElementById('status').value = "Reprobado"
+
+
+}
+   </script>
+</body>
+</html>

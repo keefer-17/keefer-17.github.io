@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>API file II</title>
+    <link rel="stylesheet" href="proyecto 15.css">
+  </head>
+
+  <body>
+    <input type="file" id="file" multiple>
+    <!-- Loader 2 elements -->
+    <div id="load-bar" class="load-bar">
+      <span id="progress" class="progress"></span>
+    </div>
+    <!-- Loader 1 element -->
+    <div id="load-bar" class="load-bar"></div>
+   <script>
+    const fileInput = document.getElementById('file')
+const progress = document.getElementById('progress')
+
+// fileInput.addEventListener('change', (e) => {
+//     const file = e.target.files[0]
+//     const fileReader = new FileReader()
+//     fileReader.readAsDataURL(file)
+
+//     fileReader.addEventListener('progress', (e) => {
+//         progress.style.width = Number.parseInt(e.loaded * 100 / e.total) + '%'
+//     })
+
+//     fileReader.addEventListener('loadend', () => {
+//         progress.style.width = '100%'
+//     })
+// })
+
+const root = document.documentElement
+
+fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0]
+    const fileReader = new FileReader()
+    fileReader.readAsDataURL(file)
+
+    fileReader.addEventListener('progress', (e) => {
+        root.style.setProperty('--bar-width', Number.parseInt(e.loaded * 100 / e.total) + '%')
+    })
+
+    fileReader.addEventListener('loadend', () => {
+        root.style.setProperty('--bar-width', '100%')
+    })
+})
+   </script>
+  </body>
+
+</html>
